@@ -15,8 +15,11 @@ class MenuHandler:
     def new_file(self):
         if self.text_widget:
             if self.text_widget.get("1.0", tk.END).strip():
-                response = messagebox.askokcancel("Confirm", "Unsaved changes will be lost. \
-                                                  Click OK to Save it now or Cancel to discard.")
+                response = messagebox.askokcancel(
+                    "Confirm",
+                    "Unsaved changes will be lost. \
+                                                  Click OK to Save it now or Cancel to discard.",
+                )
                 if response:
                     self.save_file()
                 else:
@@ -28,32 +31,34 @@ class MenuHandler:
         else:
             messagebox.showinfo("Info", "No text widget set.")
 
-
     def save_file(self):
         """if current_file set, overwrite it. Otherwise ask for filename."""
         if not self.text_widget:
             messagebox.showinfo("Info", "No text widget set.")
             return
-        
+
         if self.current_file:
             try:
-                with open(self.current_file, 'w', encoding='utf-8') as file:
+                with open(self.current_file, "w", encoding="utf-8") as file:
                     file.write(self.text_widget.get("1.0", tk.END))
                 messagebox.showinfo("Saved", f"File saved: {self.current_file}")
             except Exception as e:
                 messagebox.showerror("Error", f"Failed to save file: {e}")
         else:
-            path = filedialog.asksaveasfilename(defaultextension=".py",
-                                                filetypes=[("Python Files", "*.py"), ("All Files", "*.*")])
+            path = filedialog.asksaveasfilename(
+                defaultextension=".py",
+                filetypes=[("Python Files", "*.py"), ("All Files", "*.*")],
+            )
             if path:
                 try:
-                    with open(path, 'w') as file:
+                    with open(path, "w") as file:
                         file.write(self.text_widget.get("1.0", tk.END))
                     self.current_file = path
                     self.root.title(f"{os.path.basename(path)} - Text Editor")
                     messagebox.showinfo("Success", f"File saved: {path}")
                 except Exception as e:
                     messagebox.showerror("Error", f"Failed to save file: {e}")
+
 
 def create_menu(root):
     menu_handler = MenuHandler(root)

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyditor"
+version = "0.1.2"
+description = "A minimalist Python runner for coding interviews"
+readme = "README.md"
+requires-python = ">=3.6"
+license = {text = "MIT"}
+authors = [
+    {name = "sshu2017", email = "sshu2017@yahoo.com"}
+]
+keywords = ["python", "editor", "runner", "coding", "interview", "tkinter"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/sshu2017/pyditor"
+"Bug Reports" = "https://github.com/sshu2017/pyditor/issues"
+"Source" = "https://github.com/sshu2017/pyditor"
+
+[project.scripts]
+pyditor = "pyditor.__main__:main"

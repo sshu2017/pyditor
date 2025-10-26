@@ -1,3 +1,17 @@
 *.pyc
 __pycache__/*
 .pyditor/*
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# PyPI
+.pypirc

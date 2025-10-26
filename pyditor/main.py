@@ -117,7 +117,18 @@ def main():
     except Exception:
         pass
 
-    default_font = ("Monaco", 20)
+    # Use cross-platform font with fallbacks
+    import sys
+    if sys.platform == "darwin":  # macOS
+        default_font = ("Monaco", 18)
+        btn_font_config = ("Monaco", 18, "bold")
+    elif sys.platform == "win32":  # Windows
+        default_font = ("Consolas", 14)
+        btn_font_config = ("Consolas", 14, "bold")
+    else:  # Linux/Unix
+        default_font = ("DejaVu Sans Mono", 14)
+        btn_font_config = ("DejaVu Sans Mono", 14, "bold")
+
     text_bg = "#dad9ce"
     text_fg = "#1A0909"
 
@@ -217,13 +228,12 @@ def main():
     menu_handler.set_text_widget(text_widget)
 
     ## create run button
-    btn_font = ("Monaco", 20, "bold")
     try:
         submit_btn = tk.Button(
             root,
             text="Run",
             command=on_click,
-            font=btn_font,
+            font=btn_font_config,
             bg="#E0620E",
             fg="#FFFFFF",
             activebackground="gray",
@@ -234,7 +244,7 @@ def main():
         )
     except Exception:
         submit_btn = tk.Button(
-            root, text="Run", command=on_click, font=btn_font, height=1, width=18
+            root, text="Run", command=on_click, font=btn_font_config, height=1, width=18
         )
 
     submit_btn.pack(padx=0, pady=0, ipadx=6, ipady=12)
