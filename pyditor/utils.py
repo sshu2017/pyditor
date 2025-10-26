@@ -5,7 +5,7 @@ import re
 def get_monitors_xrandr():
     """Get monitor info using xrandr (Linux only)"""
     try:
-        output = subprocess.check_output(["xrandr"], text=True)
+        output = subprocess.check_output(["xrandr"], text=True, stderr=subprocess.DEVNULL)
         monitors = []
 
         # Parse xrandr output for connected monitors
@@ -25,6 +25,6 @@ def get_monitors_xrandr():
             )
 
         return monitors
-    except Exception as e:
-        print(f"Error getting monitors: {e}")
+    except Exception:
+        # xrandr not available (Windows/macOS) - use fallback
         return []

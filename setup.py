@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="pyditor",
-    version="0.1.2",
+    version="0.1.3",
     author="sshu2017",
     author_email="sshu2017@yahoo.com",
     description="A minimalist Python runner for coding interviews",

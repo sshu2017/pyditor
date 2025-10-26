@@ -60,7 +60,7 @@ def main():
             # Fallback to standard tkinter method
             screen_width = root.winfo_screenwidth()
             screen_height = root.winfo_screenheight()
-            monitor = {"x": 0, "y": 0, "width": screen_width, "height": screen_height}
+            monitor = {"name": "Primary", "x": 0, "y": 0, "width": screen_width, "height": screen_height}
         else:
             # Get mouse position
             mouse_x = root.winfo_pointerx()
