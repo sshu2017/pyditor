@@ -1,4 +1,8 @@
 # pyditor
+[![PyPI version](https://img.shields.io/pypi/v/pyditor)](https://pypi.org/project/pyditor/)
+[![Python versions](https://img.shields.io/pypi/pyversions/pyditor)](https://pypi.org/project/pyditor/)
+[![License](https://img.shields.io/pypi/l/pyditor)](https://github.com/sshu2017/pyditor/blob/main/LICENSE)
+
 ## A minimalist Python runner
 
 Pyditor is a lightweight, standalone Python code editor and runner built with Tkinter. It provides a simple interface for writing and executing Python code with syntax highlighting and real-time output display. Perfect for coding interviews, quick prototyping, and learning Python.
