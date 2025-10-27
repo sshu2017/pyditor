@@ -97,11 +97,6 @@ def main():
         x = monitor["x"] + (monitor["width"] - win_width) // 2
         y = monitor["y"] + (monitor["height"] - win_height) // 2
 
-        print(
-            f"DEBUG: monitor={monitor['width']}x{monitor['height']} "
-            f"window={win_width}x{win_height} position=({x}, {y})"
-        )
-
         root.geometry(f"{win_width}x{win_height}+{x}+{y}")
 
     center_window_xrandr()

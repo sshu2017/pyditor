@@ -1,5 +1,5 @@
 # pyditor
-## A minimalist Python runner for coding interviews
+## A minimalist Python runner
 
 Pyditor is a lightweight, standalone Python code editor and runner built with Tkinter. It provides a simple interface for writing and executing Python code with syntax highlighting and real-time output display. Perfect for coding interviews, quick prototyping, and learning Python.
 
@@ -23,15 +23,21 @@ Pyditor is a lightweight, standalone Python code editor and runner built with Tk
 - Python 3.6 or higher
 - Tkinter (usually included with Python)
 
-### Setup
-
-Clone the repository and run:
+ - Note: While Tkinter is part of Python's standard library, many Linux distributions separate GUI components like Tkinter into their own packages. Run this if Tkiniter is missing:
 ```bash
-python main.py
+sudo apt update
+sudo apt install python3-tk
 ```
 
-No additional dependencies required - uses only Python standard library.
 
+### Setup
+
+```bash
+pip install pyditor
+```
+
+### Run
+Run ```pyditor``` in termianl (MacOS and Linux) or in powershell (Windows).
 
 
 ## Keyboard Shortcuts
